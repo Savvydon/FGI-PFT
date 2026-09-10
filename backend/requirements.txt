@@ -1,0 +1,19 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary>=2.9.9
+pydantic>=2.0
+python-dotenv
+reportlab
+python-multipart==0.0.7
+aiosmtplib
+python-jose[cryptography]
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+pytest
+email-validator
+alembic
+email-validator
+alembic
+httpx>=0.24.0  # For Resend API
+Pillow>=10.0.0

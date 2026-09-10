@@ -1,0 +1,195 @@
+/* ==========================================================================
+   Personnel Edit Form - Adjusted for many fields
+   ========================================================================== */
+
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.edit-page-header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.edit-page-header h2 {
+  font-size: 1.9rem;
+  color: #0b3d91;
+  margin: 0 0 8px 0;
+}
+
+.edit-page-header p {
+  color: #555;
+  font-size: 1.05rem;
+}
+
+/* ── Main Form ────────────────────────────────────────────────────────────── */
+
+.edit-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 28px 36px;
+  margin-bottom: 40px;
+}
+
+/* Full-width fields (notes, etc.) */
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Field wrapper */
+.edit-form-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-form-grid label {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: #1f2937;
+}
+
+.edit-form-grid input,
+.edit-form-grid select,
+.edit-form-grid textarea {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.edit-form-grid input:focus,
+.edit-form-grid select:focus,
+.edit-form-grid textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+/* Textarea (notes) */
+.edit-form-grid textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Required asterisk */
+.edit-form-grid input:required ~ label::after,
+.edit-form-grid select:required ~ label::after {
+  content: " *";
+  color: #ef4444;
+  margin-left: 4px;
+  font-size: 0.95rem;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+
+.form-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.submit-btn,
+.cancel-btn {
+  min-width: 160px;
+  padding: 12px 32px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submit-btn {
+  background: #0b3d91;
+  color: white;
+  border: none;
+}
+
+.submit-btn:hover {
+  background: #082d6b;
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cancel-btn {
+  background: #6b7280;
+  color: white;
+  border: none;
+}
+
+.cancel-btn:hover {
+  background: #4b5563;
+  transform: translateY(-1px);
+}
+
+/* ── Messages ─────────────────────────────────────────────────────────────── */
+
+.form-error {
+  grid-column: 1 / -1;
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin: 16px 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .edit-form-grid {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .edit-form-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-container {
+    padding: 16px 12px;
+  }
+
+  .edit-page-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .edit-form-grid input,
+  .edit-form-grid select,
+  .edit-form-grid textarea {
+    font-size: 0.97rem;
+    padding: 10px 12px;
+  }
+}
