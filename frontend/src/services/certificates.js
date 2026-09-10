@@ -17,7 +17,7 @@ async function handleError(res) {
   throw new Error(message);
 }
 
-// ==================== CERTIFICATE ENDPOINTS ====================
+// CERTIFICATE ENDPOINTS 
 
 // Create new certificate
 export async function createCertificate(certificateData) {

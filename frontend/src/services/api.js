@@ -20,7 +20,7 @@ async function handleError(res) {
   throw new Error(message);
 }
 
-// ==================== AUTH ENDPOINTS ====================
+// AUTH ENDPOINTS
 
 // LOGIN (email + password)
 export async function loginUser(credentials) {
@@ -86,7 +86,7 @@ export async function checkSession() {
   return response.json();
 }
 
-// ==================== PFT / EVALUATOR ENDPOINTS ====================
+// PFT / EVALUATOR ENDPOINTS
 
 // COMPUTE FITNESS - Evaluator only
 export async function computeFitness(payload) {
@@ -166,7 +166,7 @@ export async function sendEmailReport(email, reportData) {
   return data;
 }
 
-// ==================== ADMIN ENDPOINTS ====================
+// ADMIN ENDPOINTS 
 
 // Get all PFT results (Admin only)
 export async function getAllPFTResults() {
