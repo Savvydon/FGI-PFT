@@ -63,7 +63,7 @@ export default function AdminLoginPage() {
       <h2
         style={{ textAlign: "center", marginBottom: "28px", color: "#198754" }}
       >
-        NAF PFT Admin Login
+        FGI PFT Admin Login
       </h2>
 
       <form onSubmit={handleLogin}>

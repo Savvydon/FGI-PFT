@@ -68,7 +68,7 @@ export default function SuperAdminLoginPage() {
       <h2
         style={{ textAlign: "center", marginBottom: "28px", color: "#003366" }}
       >
-        NAF PFT Super Admin Login
+        FGI PFT Super Admin Login
       </h2>
 
       <form onSubmit={handleLogin}>

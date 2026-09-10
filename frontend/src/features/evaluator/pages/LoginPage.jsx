@@ -67,7 +67,7 @@ export default function LoginPage() {
       }}
     >
       <h2 style={{ textAlign: "center", marginBottom: "28px" }}>
-        NAF PFT Evaluator Login
+        FGI PFT Evaluator Login
       </h2>
 
       <form onSubmit={handleLogin}>

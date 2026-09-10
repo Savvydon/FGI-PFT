@@ -46,7 +46,7 @@ app = FastAPI(
 print("FastAPI app instance created")
 
 # CORS - Configured with your specific frontend URLs
-DEFAULT_ORIGINS = "http://localhost:5173"
+DEFAULT_ORIGINS = "http://localhost:5173,https://fgi-pft.vercel.app"
 ALLOWED_ORIGINS_ENV = os.getenv("ALLOWED_ORIGINS", DEFAULT_ORIGINS)
 ALLOWED_ORIGINS = [origin.strip() for origin in ALLOWED_ORIGINS_ENV.split(",") if origin.strip()]
 

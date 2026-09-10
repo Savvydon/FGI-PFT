@@ -23,12 +23,13 @@ export default function CreateAdminPage() {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === "email") {
-      let cleaned = value.toUpperCase().replace(/[^A-Z0-9/]/g, "");
-      if (!cleaned.startsWith("NAF")) cleaned = "NAF" + cleaned;
-      setFormData((prev) => ({ ...prev, [name]: cleaned }));
-      return;
-    }
+    // ** I stopped the auto filling of "NAF"**
+    //if (name === "email") {
+    //   let cleaned = value.toUpperCase().replace(/[^A-Z0-9/]/g, "");
+    //   if (!cleaned.startsWith("NAF")) cleaned = "NAF" + cleaned;
+    //   setFormData((prev) => ({ ...prev, [name]: cleaned }));
+    //   return;
+    // }
 
     setFormData((prev) => ({
       ...prev,
