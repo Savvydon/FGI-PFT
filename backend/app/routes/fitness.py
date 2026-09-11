@@ -1,6 +1,6 @@
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException, status, Query
-from sqlalchemy import select, or_, func
+from sqlalchemy import select, or_, func, text
 from sqlalchemy.orm import Session, joinedload
 from sqlalchemy.exc import IntegrityError
 
@@ -171,8 +171,31 @@ def compute_pft(data: InputSchema, db: Session = Depends(get_db), current_user: 
         if not participant:
             raise HTTPException(404, f"Participant {pid} not found")
     else:
-        participant = Participant(full_name=data.full_name.strip(), title=data.title.strip(), email=(data.email or "").strip() or None,
-                                  unit=data.unit.strip(), appointment=data.appointment.strip())
+        # Generate the public Participant ID in the backend.
+        # PostgreSQL's nextval() is concurrency-safe, so two evaluators
+        # creating participants at the same time cannot receive the same ID.
+        try:
+            next_number = db.execute(
+                text("SELECT nextval('participant_number_seq')")
+            ).scalar_one()
+        except Exception:
+            db.rollback()
+            raise HTTPException(
+                500,
+                "Participant ID generation is not configured. "
+                "Ensure the participant_number_seq sequence exists in the database."
+            )
+
+        generated_participant_id = f"PFT-{int(next_number):06d}"
+
+        participant = Participant(
+            participant_id=generated_participant_id,
+            full_name=data.full_name.strip(),
+            title=data.title.strip(),
+            email=(data.email or "").strip() or None,
+            unit=data.unit.strip(),
+            appointment=data.appointment.strip(),
+        )
         db.add(participant)
         db.flush()
         db.refresh(participant)
