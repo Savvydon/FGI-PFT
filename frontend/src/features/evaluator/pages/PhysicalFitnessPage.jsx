@@ -54,9 +54,14 @@ export default function PhysicalFitnessPage() {
         </button>
 
         {/* Logo */}
-        <div style={{ textAlign: "center", marginBottom: "20px" }}>
-          <img src={fgiLogo} alt="NAF Logo" style={{ height: "60px" }} />
+        
+        <div className="brand-logo-container">
+          <img src={fgiLogo} alt="FGI Logo" className="brand-logo-img" />
         </div>
+
+        {/* <div style={{ textAlign: "center", marginBottom: "20px" }}>
+          <img src={fgiLogo} alt="FGI Logo" style={{ height: "60px" }} />
+        </div> */}
 
         {/* Title */}
         <h1
