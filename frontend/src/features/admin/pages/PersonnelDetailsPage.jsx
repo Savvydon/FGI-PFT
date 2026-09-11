@@ -72,7 +72,7 @@ export default function PersonnelDetailsPage({ fromSuperAdmin = false }) {
             <tbody>{record.evaluations.map((e) => (
               <tr key={e.id} className={selected?.id === e.id ? "selected-row" : ""}>
                 <td>{e.year}</td><td>{e.date || "N/A"}</td><td>{e.aggregate ?? "N/A"}</td><td>{e.grade || "N/A"}</td>
-                <td>{e.evaluator_name || "N/A"}<br /><small>{e.evaluator_title || ""}</small></td>
+                <td>{e.evaluator_title || "N/A"}<br /><small>{e.evaluator_name || ""}</small></td>
                 <td>{e.admin_name || "N/A"}</td>
                 <td><button className="view-btn" onClick={() => setSelectedId(e.id)}>View Evaluation</button></td>
               </tr>

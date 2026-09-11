@@ -10,8 +10,8 @@ export default function PersonalInfo({ state }) {
   return (
     <div className="personal-info">
       <p><b>Year:</b> {state.year ?? "NIL"}</p>
-      <p><b>Full Name:</b> {state.full_name ?? "NIL"}</p>
       <p><b>Title:</b> {state.title ?? "NIL"}</p>
+      <p><b>Full Name:</b> {state.full_name ?? "NIL"}</p>
       <p><b>Participant ID:</b> {state.participant_id ?? "NIL"}</p>
       <p><b>Unit:</b> {state.unit ?? "NIL"}</p>
       <p><b>Email:</b> {state.email ?? "NIL"}</p>

@@ -34,7 +34,7 @@ body {
 }
 
 .results h2 {
-  text-align: center;
+  text-align: left;
   color: #0a3d62;
   font-size: clamp(1.4rem, 4vw, 1.8rem);
   margin-bottom: clamp(1.5rem, 4vw, 2rem);
@@ -294,11 +294,21 @@ p.recommended-row {
     font-size: 15px;
   }
 
+
   .results {
     margin: 0.75rem;
     padding: 1.25rem;
     border-radius: 12px;
   }
+  
+  .results header {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.results img {
+  height: 40px;
+  margin-bottom: 1rem;
+}
 
   .results h2 {
     font-size: 1.5rem;

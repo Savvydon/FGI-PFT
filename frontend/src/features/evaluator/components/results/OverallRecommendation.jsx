@@ -67,11 +67,12 @@ export default function OverallRecommendation({ state }) {
 
       <div className="personal-info">
         <p>
-          <strong>Evaluator name:</strong> {state.evaluator_name || "NIL"}
-        </p>
-        <p>
           <strong>Evaluator Title:</strong> {state.evaluator_title || "NIL"}
         </p>
+        <p>
+          <strong>Evaluator name:</strong> {state.evaluator_name || "NIL"}
+        </p>
+        
       </div>
       {/* //Not needed again for now */}
       {/* <p>
